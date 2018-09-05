@@ -8,10 +8,12 @@ class StoreFront extends Component {
     componentDidMount() {
         this.props.getAllProducts();
     }
-
+       
     render() {
         console.log(this.props.products);
         let productDisplay = this.props.products.map((element, index) => {
+            // console.log(element)
+
             return (
                 <div className="product-container" key={index}>
                     <h2>{element.title}</h2>
@@ -31,10 +33,13 @@ class StoreFront extends Component {
 }
 
 function mapStateToProps(state) {
+    console.log(state)
     return {
+        
         products: state.products,
         loading: state.loading,
     }
 }
+
 
 export default connect(mapStateToProps, {addToShoppingCart, getAllProducts})(StoreFront);

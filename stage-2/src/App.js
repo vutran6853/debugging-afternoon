@@ -20,7 +20,9 @@ class App extends Component {
   }
 
   addToShoppingCart(product) {
+    
     this.setState({
+    
       shoppingCart: [...this.state.shoppingCart, product]
     })
     console.log(this.state.shoppingCart);
@@ -36,6 +38,7 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.state.shoppingCart);
     return (
       <div className="App">
         <NavBar />
